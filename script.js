@@ -1,4 +1,4 @@
-var playAudio = false;
+var playAudio = true;
 
 $(document).ready(function ()
 {
