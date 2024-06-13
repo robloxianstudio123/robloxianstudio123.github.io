@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Loading...</title>
 		<meta name="viewport" content="width=device-width" />
-		<link href="https://www.github.com/robloxianstudio123/robloxianstudio123.github.io/style.css" rel="stylesheet" type="text/css" />
+		<link href="./style.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
@@ -17,11 +17,24 @@
 		<h2 style="text-decoration: underline; margin-top: 50px;"><a href="https://www.reddit.com/user/admandev/comments/13o235l/rest_in_piss_forever_miss/" target="_blank">( AND TO THIS WEBSITE AS WELL )</a></h2>
 -->
 		<p>
-			<audio autoplay id="song" loop=""><source src="https://robloxianstudio123.github.io/survive.mp3" type="audio/mp3" /><embed loop="true" src="https://robloxianstudio123.github.io/survive.mp3"></embed></audio>
+			<audio autoplay id="song" loop=""><source src="./survive.mp3" type="audio/mp3" /><embed loop="true" src="./survive.mp3"></embed></audio>
 		</p>
 
-		<p id="left">Play audio</p>
+		<button type="button" id="left">Play audio</p>
+<script>
+// If script.js doesn't work this will
+var soundEnable=false;
+async function playAudio(){
+	soundEnable=!soundEnable
 
+	if (soundEnable==true) {
+		document.getElementById("song").play()
+	} else {
+		document.getElementById("song").pause()
+	}
+}
+document.getElementById("left").onclick.bind(playAudio)
+</script>
 		<p id="right">
 			<a href="https://www.github.com/robloxianstudio123" target="_blank">hosted on Github by robloxianstudio123</a>
 			-
@@ -35,7 +48,7 @@
 		</p>
 
 		<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
-		<script src="https://robloxianstudio123.github.io/spin.js"></script>
-		<script src="https://robloxianstudio123.github.io/script.js"></script>
+		<script src="./spin.js"></script>
+		<script src="./script.js"></script>
 	</body>
 </html>
