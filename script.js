@@ -1,4 +1,4 @@
-var playAudio = true;
+var playAudio = false;
 var document = Document.caller;
 
 $(document).ready(function ()
