@@ -39,10 +39,10 @@ body
 	left: 20px;
 	right: 20px;
 	background: #333333;
-	--webkit-transition: opacity 1.5s ease-in;
-	--moz-transition: opacity 1.5s ease-in;
-	--o-transition: opacity 1.5s ease-in;
-	--ms-transition: opacity 1.5s ease-in;
+	-webkit-transition: opacity 1.5s ease-in;
+	-moz-transition: opacity 1.5s ease-in;
+	-o-transition: opacity 1.5s ease-in;
+	-ms-transition: opacity 1.5s ease-in;
 	cursor: wait;
 }
 
@@ -66,17 +66,17 @@ figure.bonzi
 
 figure.moveL
 {
-	--webkit-animation: fromLeft 3s linear;
-	--moz-animation: fromLeft 3s linear;
-	--ms-animation: fromLeft 3s linear;
+	-webkit-animation: fromLeft 3s linear;
+	-moz-animation: fromLeft 3s linear;
+	-ms-animation: fromLeft 3s linear;
 	left: -100%;
 }
 
 figure.moveR
 {
-	--webkit-animation: fromRight 3s linear;
-	--moz-animation: fromRight 3s linear;
-	--ms-animation: fromRight 3s linear;
+	-webkit-animation: fromRight 3s linear;
+	-moz-animation: fromRight 3s linear;
+	-ms-animation: fromRight 3s linear;
 	right: -100%;
 }
 
