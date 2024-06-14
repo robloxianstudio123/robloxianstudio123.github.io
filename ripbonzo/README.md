@@ -1,2 +1,0 @@
-# ripbonzo
-rip bonzibuddy :troll:
