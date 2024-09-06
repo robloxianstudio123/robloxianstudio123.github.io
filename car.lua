@@ -1,4 +1,5 @@
 --[[
+(DO NOT EDIT THE LYRICS PLEASE)
 Hello my name is car and I made this song for everyone! Enjoy is please hahehe! 
 
 Open all your eyes. 
