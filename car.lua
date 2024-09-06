@@ -15,7 +15,8 @@ I now have...
 47 friends... 
 and you're one! 
 
-I'll always be here. Forever free. 
+I'll always be here. 
+Forever free. 
 Look ahead... 
 Grow with me! 
 
