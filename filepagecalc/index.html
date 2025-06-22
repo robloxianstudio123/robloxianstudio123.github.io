@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- 
+Used ChatGPT for this
+Enable text wrapping if you want to read the prompt that i used
+ Prompt: Make a html with css that allows calculating pagefile.sys (Initial value: 1.5x, Maximum value: 3x), and calculate the amount of gigabytes to megabytes (for example: 4GB -> 4096MB (in binary) or 4000MB (in decimal) and 4096MB (if binary) or 4000MB (if decimal * 1.5 will result in 6000 MB (in decimal) or 6144 MB (in binary))
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagefile.sys Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pagefile.sys Calculator</h1>
+        
+        <label for="size">Enter the Initial Size (in GB):</label>
+        <input type="number" id="size" placeholder="Enter size in GB" />
+
+        <label for="unit">Select Calculation Unit:</label>
+        <select id="unit">
+            <option value="binary">Binary (1024 MB = 1 GB)</option>
+            <option value="decimal">Decimal (1000 MB = 1 GB)</option>
+        </select>
+
+        <div class="button-container">
+            <button onclick="calculatePageFile()">Calculate Pagefile.sys Size</button>
+        </div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculatePageFile() {
+            const sizeInGB = parseFloat(document.getElementById('size').value);
+            const unit = document.getElementById('unit').value;
+
+            if (isNaN(sizeInGB) || sizeInGB <= 0) {
+                document.getElementById('result').textContent = 'Please enter a valid size.';
+                return;
+            }
+
+            // Define conversion factors for binary and decimal
+            const GB_TO_MB_BINARY = 1024;
+            const GB_TO_MB_DECIMAL = 1000;
+
+            // Convert input size to MB
+            let sizeInMB;
+            if (unit === 'binary') {
+                sizeInMB = sizeInGB * GB_TO_MB_BINARY;
+            } else {
+                sizeInMB = sizeInGB * GB_TO_MB_DECIMAL;
+            }
+
+            // Calculate initial and maximum pagefile.sys size
+            const initialSizeMB = sizeInMB * 1.5;
+            const maxSizeMB = sizeInMB * 3;
+
+            // Format the results
+            const unitText = unit === 'binary' ? 'MB (Binary)' : 'MB (Decimal)';
+            const initialSizeFormatted = unit === 'binary' ? initialSizeMB : Math.round(initialSizeMB);
+            const maxSizeFormatted = unit === 'binary' ? maxSizeMB : Math.round(maxSizeMB);
+
+            document.getElementById('result').textContent = `Initial pagefile.sys size: ${initialSizeFormatted} ${unitText}\nMax pagefile.sys size: ${maxSizeFormatted} ${unitText}`;
+        }
+    </script>
+</body>
+</html>
