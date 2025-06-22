@@ -2,8 +2,9 @@
 <!-- 
 Used ChatGPT for this
 Enable text wrapping if you want to read the prompt that i used
- Prompt: Make a html with css that allows calculating pagefile.sys (Initial value: 1.5x, Maximum value: 3x), and calculate the amount of gigabytes to megabytes (for example: 4GB -> 4096MB (in binary) or 4000MB (in decimal) and 4096MB (if binary) or 4000MB (if decimal * 1.5 will result in 6000 MB (in decimal) or 6144 MB (in binary))
--->
+First Prompt: Make a html with css that allows calculating pagefile.sys (Initial value: 1.5x, Maximum value: 3x), and calculate the amount of gigabytes to megabytes (for example: 4GB -> 4096MB (in binary) or 4000MB (in decimal) and 4096MB (if binary) or 4000MB (if decimal * 1.5 will result in 6000 MB (in decimal) or 6144 MB (in binary))
+Second Prompt: Also add info to instruct users where to edit the pagefile (System Properties -> Advanced -> Performance -> Settings -> Advanced -> Virtual Memory -> Change)
+ -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,6 +70,31 @@ Enable text wrapping if you want to read the prompt that i used
             font-size: 18px;
             font-weight: bold;
         }
+
+        .info-section {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .info-section h3 {
+            margin-top: 0;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .info-section ol {
+            padding-left: 20px;
+        }
+
+        .info-section ol li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -90,6 +116,23 @@ Enable text wrapping if you want to read the prompt that i used
         </div>
 
         <div class="result" id="result"></div>
+    </div>
+
+    <div class="info-section">
+        <h3>How to Edit the Pagefile Size</h3>
+        <p>If you wish to change the size of the pagefile (`pagefile.sys`) manually, follow these steps:</p>
+        <ol>
+            <li>Press <strong>Windows Key + Pause/Break</strong> to open the <strong>System Properties</strong> window.</li>
+            <li>Click on the <strong>Advanced system settings</strong> link on the left-hand side.</li>
+            <li>In the <strong>System Properties</strong> window, go to the <strong>Advanced</strong> tab.</li>
+            <li>Under the <strong>Performance</strong> section, click the <strong>Settings</strong> button.</li>
+            <li>In the <strong>Performance Options</strong> window, go to the <strong>Advanced</strong> tab.</li>
+            <li>Under the <strong>Virtual Memory</strong> section, click the <strong>Change</strong> button.</li>
+            <li>Uncheck the box that says <strong>Automatically manage paging file size for all drives</strong>.</li>
+            <li>Now, you can set the custom size for the pagefile by selecting a drive, and then selecting either <strong>Custom size</strong> or <strong>System managed size</strong>.</li>
+            <li>Click <strong>Set</strong> to apply your changes, and then click <strong>OK</strong>.</li>
+            <li>Restart your computer for the changes to take effect.</li>
+        </ol>
     </div>
 
     <script>
